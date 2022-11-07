@@ -1,6 +1,8 @@
 import requests
 
 from pprint import pprint
+
+
 def get_super_hero_id(name):
     super_hero_dict = requests.get('https://akabab.github.io/superhero-api/api/all.json').json()
     id = 0
@@ -11,7 +13,6 @@ def get_super_hero_id(name):
     if id == 0:
         print('Не верное имя героя:', name)
     return id
-
 
 
 def get_super_hero_intelligence(id_number):
@@ -38,7 +39,7 @@ names_list = ['Hulk', 'Thanos', 'Captain America']
 
 
 def compare_super_heroes_by_intelligence(names_list):
-    id_numbers =[]
+    id_numbers = []
     for name in names_list:
         id_numbers.append(get_super_hero_id(name))
     if 0 in id_numbers:
